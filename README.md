@@ -1,52 +1,51 @@
 ### Brief of project
 * Overview
-	Prototype application covering full of frontend technology stack(short by fefs)
+	* Prototype application covering full of frontend technology stack(short by fefs)
 * Functions
-	User view the list of vehicle.
-	User Can add Vehicle.
-	User can search Vehicle.
-	All the data export to csv file
+	* User view the list of vehicle.
+	* User Can add Vehicle.
+	* User can search Vehicle.
+	* All the data export to csv file
 * Technology
-	Application: CoffeeScript, Jade, Compass, Ionic Framework (this includes AngularJS, SCSS, Cordova), RequireJS
-	Build: Gulp, Bower
-	Linter: CoffeeLint, SCSSList
-	Unit Testing: Jasmine, Karma, PhantomJS, CoffeeCoverage
-	E2E Testing: Protractor, Google Chrome, Appium
+	* Application: CoffeeScript, Jade, Compass, Ionic Framework (this includes AngularJS, SCSS, Cordova), RequireJS
+	* Build: Gulp, Bower
+	* Linter: CoffeeLint, SCSSList
+	* Unit Testing: Jasmine, Karma, PhantomJS, CoffeeCoverage
+	* E2E Testing: Protractor, Google Chrome, Appium
 
 ### Project Structure
-
-├── gulpfile.coffee         			- Configuration of all Gulp tasks
-├── gulpfile.js             			- Define gulpfile coffee
-├── package.json            			- Dev dependencies and required plugins
-├── bower.json              			- Lists front-end dependencies
-├── .bowerrc							- Package installation directory of bower
-├── config.xml              			- Global configuration
-├── .gitignore              			- Best practices for checking in apps
-├── resources/              			- Scaffolded placeholder Icons and Splashscreens
-│   ├── ios/
-│   ├── android/
-├── app/
-│   ├── assets/              			- Assets
-│   ├── scripts/            			- Coffee script
-│   ├── views/             				- Views
-├── platforms/              			- Targeted operating systems
-├── plugins/                			- Native plugins
-├── hooks/                  			- Lifecycle hooks
-├── scss/                   			- Scss file
-├── test/                   			- Tests
-│   ├── e2e/
-│		├── protractor/
-│			├── controller/			 	- E2E testing
-│			├── protractor.config.js 	- Protractor config
-├── www/                    			- Copied from app/ to be used
+	├── gulpfile.coffee         			- Configuration of all Gulp tasks
+	├── gulpfile.js             			- Define gulpfile coffee
+	├── package.json            			- Dev dependencies and required plugins
+	├── bower.json              			- Lists front-end dependencies
+	├── .bowerrc							- Package installation directory of bower
+	├── config.xml              			- Global configuration
+	├── .gitignore              			- Best practices for checking in apps
+	├── resources/              			- Scaffolded placeholder Icons and Splashscreens
+	│   ├── ios/
+	│   ├── android/
+	├── app/
+	│   ├── assets/              			- Assets
+	│   ├── scripts/            			- Coffee script
+	│   ├── views/             				- Views
+	├── platforms/              			- Targeted operating systems
+	├── plugins/                			- Native plugins
+	├── hooks/                  			- Lifecycle hooks
+	├── scss/                   			- Scss file
+	├── test/                   			- Tests
+	│   ├── e2e/
+	│		├── protractor/
+	│			├── controller/			 	- E2E testing
+	│			├── protractor.config.js 	- Protractor config
+	├── www/                    			- Copied from app/ to be used
 
 ### Environment (prepare before start)
 
 * Install NodeJS version 0.10.33 
-	Reason: When run on lastest version 0.12.2 found some error with node-sass
+	* Reason: When run on lastest version 0.12.2 found some error with node-sass
 * Change ionicServeAddress
-	Edit ionic.config file. On Mac this file is at ~/.ionic. On Windows it can be found at c:/users/username/.ionic.
-	Change ionicServeAddress to localhost
+	* Edit ionic.config file. On Mac this file is at ~/.ionic. On Windows it can be found at c:/users/username/.ionic.
+	* Change ionicServeAddress to localhost
 
 ### Getting started
 
