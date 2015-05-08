@@ -1,12 +1,15 @@
+# This class process business logic of action in controller
 angular.module('app')
+# Contructor
 .factory('VehicleData',() ->
   _vehicles = []
 
-# Contructor
+# Get vehicles
   {
   get: ->
     _vehicles
 
+# Set vehicles
   ,set: (vehicles) ->
     _vehicles = vehicles
 
@@ -14,14 +17,18 @@ angular.module('app')
   }
 )
 
+# List vehicle controller
 .controller('vehicleSearchList', ($scope,VehicleData) ->
-  
+
+# Set scope data of vehicle list
   $scope.vehicles = VehicleData.get()
   
   return
 )
 
+# Add vehicle controller
 .controller('HomeCtrl', ($scope,VehicleData) ->
+# Process upload image
   $scope.uploadImage = ->
   document.addEventListener 'deviceready', (->
     options =
@@ -39,26 +46,28 @@ angular.module('app')
       image.src = 'data:image/jpeg;base64,' + imageData
       return
     ), (err) ->
-# error
+# Error
       return
     return
   ), false
 
+# Initial object to save
   $scope.vehicle={}
   $scope.vehicles = VehicleData.get()
 
+# Save data
   $scope.addVehicle = ->
     $scope.vehicles.push($scope.vehicle)
 
     VehicleData.set($scope.vehicles)
 
-    ###Storage data###
+# Storage data
     localStorage.setItem('vehicleName', $scope.vehicle.name)
     localStorage.setItem('vehicleType', $scope.vehicle.type)
     localStorage.setItem('vehicleImage', $scope.vehicle.image.base64)
     return
 
-  ###It will make object for saving in csv file###
+# Make object for saving in csv file
   exportDataToCSV = (objArray) ->
     array = objArray
     str = ''
@@ -74,4 +83,3 @@ angular.module('app')
     str
   return
 )
-

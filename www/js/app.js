@@ -90,14 +90,10 @@
     $scope.addVehicle = function() {
       $scope.vehicles.push($scope.vehicle);
       VehicleData.set($scope.vehicles);
-
-      /*Storage data */
       localStorage.setItem('vehicleName', $scope.vehicle.name);
       localStorage.setItem('vehicleType', $scope.vehicle.type);
       localStorage.setItem('vehicleImage', $scope.vehicle.image.base64);
     };
-
-    /*It will make object for saving in csv file */
     exportDataToCSV = function(objArray) {
       var array, i, index, line, str;
       array = objArray;

@@ -81,6 +81,12 @@
 			* Now run the test with: `protractor .\test\protractor.config.js` (TODO: run with gulp)
 			* You should see a Chrome browser window open up and navigate to the todo list in the AngularJS page, then close itself (this should be very fast!).
 
+### Source documentation
+
+* Install StyleDocco globally by run: `npm install -g styledocco`.
+* Generate source documentation by run: `gulp doc-generate`. Documentation will output in docs folder.
+
+
 ## License
 
 Distributed under MIT license.

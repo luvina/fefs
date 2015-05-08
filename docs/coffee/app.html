@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>app.coffee</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>app.coffee</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>This class define template and controller application</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+App = angular.<span class="hljs-built_in">module</span>(<span class="hljs-string">'app'</span>, [<span class="hljs-string">'ionic'</span>,<span class="hljs-string">'naif.base64'</span>])
+
+App.run ($ionicPlatform) -&gt;
+
+  $ionicPlatform.ready -&gt;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Hide the accessory bar by default (remove this to show the accessory
+ bar above the keyboard for form inputs)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">window</span>.cordova &amp;&amp; <span class="hljs-built_in">window</span>.cordova.plugins.Keyboard
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(<span class="hljs-literal">true</span>)
+
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">window</span>.StatusBar</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>org.apache.cordova.statusbar required</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      StatusBar.styleDefault()</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Define url and create tabs that mapping template file</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Create tabs</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>App.config ($stateProvider, $urlRouterProvider) -&gt;
+  $stateProvider</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Tab index</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  .state(<span class="hljs-string">'tab'</span>,
+    <span class="hljs-attribute">url</span>: <span class="hljs-string">'/tab'</span>
+    <span class="hljs-attribute">abstract</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-attribute">templateUrl</span>: <span class="hljs-string">'templates/tabs.html'</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Home page is add vehicle tab that call HomeCtrl</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  ).state(<span class="hljs-string">'tab.add'</span>,
+    <span class="hljs-attribute">url</span>: <span class="hljs-string">'/add'</span>
+    <span class="hljs-attribute">views</span>:
+      <span class="hljs-string">'add-tab'</span>:
+        <span class="hljs-attribute">templateUrl</span>: <span class="hljs-string">'templates/add.html'</span>,
+        <span class="hljs-attribute">controller</span>: <span class="hljs-string">'HomeCtrl'</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>List vehicle tab that call vehicleSearchList controller</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  ).state(<span class="hljs-string">'tab.list'</span>,
+    <span class="hljs-attribute">url</span>: <span class="hljs-string">'/list'</span>
+    <span class="hljs-attribute">views</span>:
+      <span class="hljs-string">'list-tab'</span>:
+        <span class="hljs-attribute">templateUrl</span>: <span class="hljs-string">'templates/list.html'</span>,
+        <span class="hljs-attribute">controller</span>: <span class="hljs-string">'vehicleSearchList'</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>About tab</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  ).state(<span class="hljs-string">'tab.about'</span>,
+    <span class="hljs-attribute">url</span>: <span class="hljs-string">'/about'</span>
+    <span class="hljs-attribute">views</span>:
+      <span class="hljs-string">'about-tab'</span>:
+        <span class="hljs-attribute">templateUrl</span>: <span class="hljs-string">'templates/about.html'</span>
+  )</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>Another url is redirect to add tab</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  $urlRouterProvider.otherwise <span class="hljs-string">'/tab/add'</span></pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

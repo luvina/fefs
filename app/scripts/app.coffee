@@ -1,5 +1,6 @@
-App = angular.module('app', ['ionic','naif.base64'])
+# This class define template and controller application
 
+App = angular.module('app', ['ionic','naif.base64'])
 
 App.run ($ionicPlatform) ->
 
@@ -13,28 +14,31 @@ App.run ($ionicPlatform) ->
       # org.apache.cordova.statusbar required
       StatusBar.styleDefault()
 
-# Define url and template file
+# Define url and create tabs that mapping template file
+
+# Create tabs
 App.config ($stateProvider, $urlRouterProvider) ->
   $stateProvider
+# Tab index
   .state('tab',
     url: '/tab'
     abstract: true
     templateUrl: 'templates/tabs.html'
-# Home page is add vehicle page
+# Home page is add vehicle tab that call HomeCtrl
   ).state('tab.add',
     url: '/add'
     views:
       'add-tab':
         templateUrl: 'templates/add.html',
         controller: 'HomeCtrl'
-# List vehicle page
+# List vehicle tab that call vehicleSearchList controller
   ).state('tab.list',
     url: '/list'
     views:
       'list-tab':
         templateUrl: 'templates/list.html',
         controller: 'vehicleSearchList'
-# About page
+# About tab
   ).state('tab.about',
     url: '/about'
     views:
@@ -42,5 +46,5 @@ App.config ($stateProvider, $urlRouterProvider) ->
         templateUrl: 'templates/about.html'
   )
 
-# Another url is redirect to add page
+# Another url is redirect to add tab
   $urlRouterProvider.otherwise '/tab/add'
