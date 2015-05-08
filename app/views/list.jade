@@ -1,0 +1,9 @@
+ion-view(title='List of Vehicle')
+  ion-content(has-header='true', has-tabs='true', padding='true')
+
+    input(type="text" ng-model="searchVehicle" placeholder="Search Vehicle here")
+    .list(ng-repeat='vendor in vehicles | filter:searchVehicle')
+      a.item.item-thumbnail-left(href='{{vendor.link}}', target='_blank')
+        img(src='data:image/gif;base64,' + '{{vendor.image.base64}}')
+        h2 {{vendor.name}}
+        p {{vendor.type}}
